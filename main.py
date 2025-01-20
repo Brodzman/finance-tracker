@@ -17,22 +17,63 @@ def withdraw_section(withdraw_selection):
     if withdraw_selection == '1':
         splurge_category()
     elif withdraw_selection == '2':
-        pass # Daily Expenses
-    elif withdraw_section == '3':
-        pass # Savings
+        daily_expenses_catergory()
+    elif withdraw_selection == '3':
+        savings_catergory()
+    else:
+        withdraw_section(input("Not a valid option\n"))
+    
 
 def splurge_category():
     ordered_categories = ''
     catergory_location = 1
-    splurge_categories = ['Tech',
-                          'Takeaway']
-    for category in splurge_categories:
+    # Turn into file
+    categories = ['Tech',
+                    'Takeaway']
+    
+    for category in categories:
         ordered_categories += ' ' + str(catergory_location) + '. ' + category + '\n'
         catergory_location += 1
-    selection_location = int(input(f'Which category?\n{ordered_categories}')) - 1
     
-    withdraw_amount = int(input(f'How much would you like to withdraw from {splurge_categories[selection_location]}?\n $'))
-    print(withdraw_amount) # Withdraw money
+    selection_location = int(input(f'Which category?\n{ordered_categories}')) - 1
+    withdraw_amount = int(input(f'How much would you like to withdraw from {categories[selection_location]}?\n $'))
+    # Withdraw money
+    print(withdraw_amount)
+    main()
+
+def daily_expenses_catergory():
+    ordered_categories = ''
+    catergory_location = 1
+    # Turn into file
+    categories = ['Groceries',
+                    'Bills']
+    
+    for category in categories:
+        ordered_categories += ' ' + str(catergory_location) + '. ' + category + '\n'
+        catergory_location += 1
+    
+    selection_location = int(input(f'Which category?\n{ordered_categories}')) - 1
+    withdraw_amount = int(input(f'How much would you like to withdraw from {categories[selection_location]}?\n $'))
+    # Withdraw money
+    print(withdraw_amount)
+
+def savings_catergory():
+    ordered_categories = ''
+    catergory_location = 1
+    # Turn into file
+    categories = ['Stocks',
+                    'Running out of money']
+    
+    for category in categories:
+        ordered_categories += ' ' + str(catergory_location) + '. ' + category + '\n'
+        catergory_location += 1
+    
+    selection_location = int(input(f'Which category?\n{ordered_categories}')) - 1
+    withdraw_amount = int(input(f'How much would you like to withdraw from {categories[selection_location]}?\n $'))
+    # Withdraw money
+    print(withdraw_amount)
+
+
 
 if __name__ == "__main__":
     main()

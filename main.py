@@ -1,7 +1,14 @@
 from transaction import *
 
 def main():
+    money_path = "./money.txt"
+    document = get_money_path(money_path)
+    print(document)
     main_selection(input("What would you like to do today?\n 1. Withdraw\n 2. Deposit\n 3. View reports\n"))
+
+def get_money_path(path):
+    with open(path) as f:
+        return f.read()
 
 def main_selection(selection):
     if selection == '1':
@@ -37,7 +44,7 @@ def splurge_category():
         catergory_location += 1
     
     selection_location = int(input(f'Which category?\n{ordered_categories}')) - 1
-    withdraw_amount = int(input(f'How much would you like to withdraw from {categories[selection_location]}?\n $'))
+    withdraw_amount = int(input(f'How much would you like to withdraw from {categories[selection_location]}?\n$'))
     # Withdraw money
     print(withdraw_amount)
     main()
@@ -54,7 +61,7 @@ def daily_expenses_catergory():
         catergory_location += 1
     
     selection_location = int(input(f'Which category?\n{ordered_categories}')) - 1
-    withdraw_amount = int(input(f'How much would you like to withdraw from {categories[selection_location]}?\n $'))
+    withdraw_amount = int(input(f'How much would you like to withdraw from {categories[selection_location]}?\n$'))
     # Withdraw money
     print(withdraw_amount)
 
@@ -70,7 +77,7 @@ def savings_catergory():
         catergory_location += 1
     
     selection_location = int(input(f'Which category?\n{ordered_categories}')) - 1
-    withdraw_amount = int(input(f'How much would you like to withdraw from {categories[selection_location]}?\n $'))
+    withdraw_amount = int(input(f'How much would you like to withdraw from {categories[selection_location]}?\n$'))
     # Withdraw money
     print(withdraw_amount)
 
@@ -88,15 +95,21 @@ def savings_catergory():
 
 def deposit_section(deposit_selection):
     if deposit_selection == '1':
-        pass # Splurge
+        print(input('How much would you like to deposit to Splurge?\n'))
     elif deposit_selection == '2':
         pass # Daily exp
     elif deposit_selection == '3':
         pass # Savings
     elif deposit_selection == '4':
-        pass # Buckets
+        bucket_section(input("Which bucket system would you like to use?\n 1. Base (10, 30, 60)\n 2. Custom"))
     else:
         deposit_section(input("Not a valid option\n"))
+
+def bucket_section(bucket_type):
+    if bucket_type == '1':
+        pass
+
+
 
 
 

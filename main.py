@@ -1,8 +1,14 @@
 from transaction import *
 from constants import *
+import linecache
 
 def main():
-    print(DOCUMENT)
+    line = int(linecache.getline(MONEY_PATH, 2))
+    print(line)
+    print(type(line))
+    line += 50
+    print(line)
+    # Add ability to write to file
     main_selection(input("What would you like to do today?\n 1. Withdraw\n 2. Deposit\n 3. View reports\n"))
 
 def main_selection(selection):

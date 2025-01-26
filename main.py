@@ -7,12 +7,13 @@ def main_selection(selection):
     if selection == '1':
         withdraw_section(input("What account are you withdrawing from?\n 1. Splurge\n 2. Daily Expenses\n 3. Savings\n"))
     elif selection == '2':
-        pass # Deposit
+        deposit_section(input("What account would you like to deposit to?\n 1. Splurge\n 2. Daily Expenses\n 3. Savings\n 4. Apply Bucket Rule\n"))
     elif selection == '3':
         pass # View reports
     else: 
         main_selection(input("Not a valid option\n"))
 
+# WITHDRAW
 def withdraw_section(withdraw_selection):
     if withdraw_selection == '1':
         splurge_category()
@@ -72,6 +73,30 @@ def savings_catergory():
     withdraw_amount = int(input(f'How much would you like to withdraw from {categories[selection_location]}?\n $'))
     # Withdraw money
     print(withdraw_amount)
+
+# Copy of main selection
+#
+# def main_selection(selection):
+#     if selection == '1':
+#         withdraw_section(input("What account are you withdrawing from?\n 1. Splurge\n 2. Daily Expenses\n 3. Savings\n"))
+#     elif selection == '2':
+#         pass # Deposit
+#     elif selection == '3':
+#         pass # View reports
+#     else: 
+#         main_selection(input("Not a valid option\n"))
+
+def deposit_section(deposit_selection):
+    if deposit_selection == '1':
+        pass # Splurge
+    elif deposit_selection == '2':
+        pass # Daily exp
+    elif deposit_selection == '3':
+        pass # Savings
+    elif deposit_selection == '4':
+        pass # Buckets
+    else:
+        deposit_section(input("Not a valid option\n"))
 
 
 

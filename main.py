@@ -1,14 +1,9 @@
 from transaction import *
+from constants import *
 
 def main():
-    money_path = "./money.txt"
-    document = get_money_path(money_path)
-    print(document)
+    print(DOCUMENT)
     main_selection(input("What would you like to do today?\n 1. Withdraw\n 2. Deposit\n 3. View reports\n"))
-
-def get_money_path(path):
-    with open(path) as f:
-        return f.read()
 
 def main_selection(selection):
     if selection == '1':
